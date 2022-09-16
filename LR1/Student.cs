@@ -25,7 +25,7 @@ namespace LR1
         {
             this.student = new Person();
             this.formeducation = Education.Bachelor;
-            this.NumberGroup = 204;
+            this.NumberGroup = 21;
             this.exams = new Exam[0];
         }
 
@@ -61,7 +61,7 @@ namespace LR1
 
                 for (int i = 0; i < exams.Length; i++)
                 {
-                    sum += (double)exams[i].Grade;
+                    sum += exams[i].Grade;
                 }
                 return sum / (exams.Length);
             }
@@ -95,7 +95,7 @@ namespace LR1
 
         public override string ToString()
         {
-            return string.Format("\nСтудент: {0}\nФорма обучения: {1}\nНоммер группы: {2}\nЭкзамены: {3}", student, formeducation, NumberGroup, exams);
+            return string.Format("\nСтудент: {0}\nФорма обучения: {1}\nНомер группы: {2}", student, formeducation, NumberGroup);
         }
 
         public virtual string ToShortString()

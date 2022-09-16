@@ -8,6 +8,13 @@ Student people = new Student();
 Console.WriteLine(people.ToShortString());
 Console.WriteLine();
 
+Console.WriteLine("Второе задание:");
+
+Console.WriteLine(people[Education.Bachelor]);
+Console.WriteLine(people[Education.SecondEducation]);
+Console.WriteLine(people[Education.Specialist]);
+Console.WriteLine();
+
 Console.WriteLine("Третье задание: ");
 
 people.Datastudent.Surname = "Горохов";
@@ -88,19 +95,22 @@ Console.WriteLine();
         exams3[i] = new Exam[ncolumn];
     }
 
-    //stopwatch3.Start(); // засекаем время для зубчатого массива
-    //for (int i = 0; i < exams3.Length; i++)
-    //{
-    //    for( int j = 0; j < exams3[i].Length; j++)
-    //    {
-    //        exams3[i][j].Subject = "Русский язык";
-    //    }
-    //}
-    //stopwatch3.Stop();
-    //Console.WriteLine(stopwatch3.Elapsed);
-}
-//people1.Dataexams[0] = new Exam(); 
-//people1.Dataexams[1] = new Exam("Физика", 4, new DateTime(2022, 10, 9));
-//people1.Dataexams[2] = new Exam("Английский Язык", 3, new DateTime(2022, 10, 9));
-//people1.AddExams(people1.Dataexams[0], people1.Dataexams[1], people1.Dataexams[2]);
+    for (int i = 0; i < nrow; i++)
+    {
+        for (int j = 0; j < ncolumn; j++)
+        {
+            exams3[i][j] = new Exam();
+        }
+    }
 
+    stopwatch3.Start();
+    for (int i = 0; i < nrow; i++)
+    {
+        for (int j = 0; j < ncolumn; j++)
+        {
+            exams3[i][j].Subject = "Русский язык";
+        }
+    }
+    stopwatch3.Stop();
+    Console.WriteLine($"Время выполнения зубчатого массива: {stopwatch3.Elapsed}");
+}
