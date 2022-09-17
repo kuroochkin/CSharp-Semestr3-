@@ -59,11 +59,11 @@ namespace LR1
             {
                 double sum = 0;
 
-                for (int i = 0; i < exams.Length; i++)
+                foreach (Exam item in exams)
                 {
-                    sum += exams[i].Grade;
+                    sum += item.Grade;
                 }
-                return sum / (exams.Length);
+                return sum / exams.Length;
             }
         }
 
@@ -86,16 +86,28 @@ namespace LR1
             {
                 exams1[i] = exams[i];
             }
-            for (int i = exams.Length; i < exams1.Length - exams.Length; i++)
+            for (int i = exams.Length; i < exams1.Length; i++)
             {
                 exams1[i] = exam[i - exams.Length];
             }
-            exams = exams1;
+            this.exams = exams1;
         }
 
         public override string ToString()
         {
-            return string.Format("\nСтудент: {0}\nФорма обучения: {1}\nНомер группы: {2}", student, formeducation, NumberGroup);
+            string list = "Нет";
+            for (int i = 0; i < exams.Length; i++)
+            {
+                if (exams[i] == null)
+                {
+                    break;
+                }
+                if (list == "Нет")
+                    list = "";
+                list += exams[i].Subject + " ";
+            }
+
+            return string.Format("\nСтудент: {0}\nФорма обучения: {1}\nНомер группы: {2} \nЭкзамены: {3}" , student, formeducation, NumberGroup, list);
         }
 
         public virtual string ToShortString()

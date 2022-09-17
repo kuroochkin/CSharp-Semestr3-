@@ -23,12 +23,18 @@ people.Datastudent.Datetime = new DateTime(2002, 7, 9);
 people.Dataeducation = Education.Bachelor;
 people.DataGroup = 31;
 Console.WriteLine(people.ToString());
-Console.WriteLine();
 
+Exam[] e = new Exam[1];
+e[0] = new Exam();
+people.AddExams(e);
+Console.WriteLine(people.ToString());
+
+
+Console.WriteLine();
 Console.WriteLine("Четвертое задание:");
 Console.WriteLine();
 
-Exam[] ex = new Exam[3];
+Exam[] ex = new Exam[4];
 ex[0] = new Exam();
 ex[1] = new Exam("Физика", 4, new DateTime(2022, 6, 22));
 ex[2] = new Exam("Английский Язык", 3, new DateTime(2022, 6, 24));
@@ -113,4 +119,5 @@ Console.WriteLine();
     }
     stopwatch3.Stop();
     Console.WriteLine($"Время выполнения зубчатого массива: {stopwatch3.Elapsed}");
+    
 }
