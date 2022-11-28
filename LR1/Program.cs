@@ -33,6 +33,7 @@ Console.WriteLine(people.ToString());
 Console.WriteLine();
 Console.WriteLine("Четвертое задание:");
 Console.WriteLine();
+Console.WriteLine();
 
 Exam[] ex = new Exam[4];
 ex[0] = new Exam();
